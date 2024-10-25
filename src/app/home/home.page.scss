@@ -1,27 +1,52 @@
-#container {
+.gym-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.gym-logo {
+  width: 150px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form {
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.gym-item {
+  --background: rgba(255, 255, 255, 0.8);  // Fondo de los inputs
+  --border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.gym-button {
+  --background: linear-gradient(45deg, #FF3D00, #FF9800);  // Degradado naranja
+  --border-radius: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 20px;
+  box-shadow: 0 4px 10px rgba(255, 61, 0, 0.5); // Sombra alrededor del botón
+}
+
+.register-button {
+  --border-radius: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #FF9800;
+  border: 2px solid #FF9800;
+  margin-top: 15px;
+}
+
+.forgot-password {
   text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  margin-top: 10px;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
+ion-header {
+  --background: url('assets/images/gym-background.jpg') center / cover no-repeat;
+  --background-blend-mode: multiply;
 }
