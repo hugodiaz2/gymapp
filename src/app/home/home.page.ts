@@ -1,38 +1,48 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
-export class HomePage implements OnInit {
-  loginForm: FormGroup = this.fb.group({
-    email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required]]
-  });
-  constructor(private fb: FormBuilder, private afAuth: AngularFireAuth) {}
+export class HomePage {
+  loginForm: FormGroup;
 
-  ngOnInit() {
+  constructor(private fb: FormBuilder, private authService: AuthService) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required]]
+      password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 
   login() {
     const { email, password } = this.loginForm.value;
-    this.afAuth.signInWithEmailAndPassword(email, password)
-      .then(() => {
-        console.log('Logged in successfully!');
-      })
-      .catch(err => {
-        console.error('Login error:', err);
-      });
+    this.authService.login(email, password).then(
+      (result) => {
+        console.log('Login successful:', result);
+        // Maneja el resultado del inicio de sesión
+      }
+    ).catch(error => {
+      console.error('Login error:', error);
+      // Maneja el error
+    });
   }
 
   register() {
-    // Navegar a la página de registro o implementar la lógica de registro aquí
+    // Navega a la página de registro
+  }
+
+  loginWithGoogle() {
+    this.authService.loginWithGoogle().then(
+      (result) => {
+        console.log('Google login successful:', result);
+        // Maneja el resultado del inicio de sesión con Google
+      }
+    ).catch(error => {
+      console.error('Google login error:', error);
+      // Maneja el error
+    });
   }
 }

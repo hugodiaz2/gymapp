@@ -18,13 +18,13 @@
 }
 
 .gym-item {
-  --background: rgba(255, 255, 255, 0.8);  // Fondo de los inputs
+  --background: rgba(255, 255, 255, 0.8); // Fondo de los inputs
   --border-radius: 12px;
   margin-bottom: 15px;
 }
 
 .gym-button {
-  --background: linear-gradient(45deg, #FF3D00, #FF9800);  // Degradado naranja
+  --background: linear-gradient(45deg, #FF3D00, #FF9800); // Degradado naranja
   --border-radius: 20px;
   font-weight: bold;
   font-size: 18px;
@@ -47,6 +47,7 @@
 }
 
 ion-header {
-  --background: url('assets/images/gym-background.jpg') center / cover no-repeat;
+  --background: url('../../assets/images/gym-background.jpeg') center / cover no-repeat; // Ajusta la ruta según la ubicación
   --background-blend-mode: multiply;
+  height: 56px; // Ajusta la altura según tus necesidades
 }
