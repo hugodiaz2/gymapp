@@ -21,8 +21,8 @@
       <ion-input type="password" formControlName="password"></ion-input>
     </ion-item>
 
-    <ion-button expand="block" type="submit" [disabled]="!loginForm.valid" class="gym-button">
-      Iniciar Sesión
+    <ion-button expand="block" color="light" (click)="loginWithGoogle()" class="google-button">
+      Iniciar sesión con Google
     </ion-button>
   </form>
 
