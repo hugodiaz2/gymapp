@@ -3,51 +3,59 @@
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+  background-color: #121212; /* Fondo negro */
 }
 
 .gym-logo {
   width: 150px;
   height: auto;
   border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .login-form {
   margin-top: 40px;
   padding: 20px;
+  background-color: #1c1c1c; /* Fondo oscuro para el formulario */
+  border-radius: 12px;
 }
 
 .gym-item {
-  --background: rgba(255, 255, 255, 0.8); // Fondo de los inputs
+  --background: rgba(255, 255, 255, 0.1); /* Fondo más oscuro para entradas */
   --border-radius: 12px;
   margin-bottom: 15px;
+  color: #ffffff; /* Texto en blanco */
 }
 
 .gym-button {
-  --background: linear-gradient(45deg, #FF3D00, #FF9800); // Degradado naranja
+  --background: linear-gradient(45deg, #1e88e5, #1565c0); /* Degradado azul */
   --border-radius: 20px;
   font-weight: bold;
   font-size: 18px;
   margin-top: 20px;
-  box-shadow: 0 4px 10px rgba(255, 61, 0, 0.5); // Sombra alrededor del botón
+  color: #ffffff; /* Texto en blanco */
+  box-shadow: 0 4px 10px rgba(30, 136, 229, 0.5); /* Sombra azul alrededor del botón */
 }
 
 .register-button {
   --border-radius: 20px;
   font-weight: bold;
   font-size: 18px;
-  color: #FF9800;
-  border: 2px solid #FF9800;
+  color: #1e88e5; /* Azul para el texto */
+  border: 2px solid #1e88e5; /* Borde azul */
   margin-top: 15px;
 }
 
 .forgot-password {
   text-align: center;
   margin-top: 10px;
+  color: #1e88e5; /* Texto en azul */
 }
 
 ion-header {
-  --background: url('../../assets/images/gym-background.jpeg') center / cover no-repeat; // Ajusta la ruta según la ubicación
+  --background: url('../../assets/images/gym-background.jpeg') center / cover no-repeat;
   --background-blend-mode: multiply;
-  height: 56px; // Ajusta la altura según tus necesidades
+  height: 56px;
+  background-color: #1e88e5; /* Fondo azul en la cabecera */
+  color: #ffffff; /* Texto en blanco en la cabecera */
 }

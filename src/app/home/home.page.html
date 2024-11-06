@@ -1,11 +1,10 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title class="ion-text-center">💪 Gym Login</ion-title>
+    <ion-title class="ion-text-center">GYM LOGIN</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <!-- Imagen de fondo o logo del gym -->
   <div class="gym-background">
     <img src="assets/logo.jpeg" alt="Gym Logo" class="gym-logo">
   </div>
@@ -21,12 +20,11 @@
       <ion-input type="password" formControlName="password"></ion-input>
     </ion-item>
 
-    <ion-button expand="block" color="light" (click)="loginWithGoogle()" class="google-button">
-      Iniciar sesión con Google
-    </ion-button>
+    <ion-button expand="block" color="primary" type="submit">Iniciar Sesión</ion-button>
   </form>
 
-  <ion-button expand="block" color="light" (click)="register()" class="register-button">
+  <!-- Botón para redirigir al registro -->
+  <ion-button expand="block" color="light" (click)="goToRegister()" class="register-button">
     Registrarse
   </ion-button>
 
