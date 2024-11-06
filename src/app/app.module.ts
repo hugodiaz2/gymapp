@@ -9,9 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
 import { RouteReuseStrategy } from '@angular/router';
 import firebase from 'firebase/compat/app'; 
-import 'firebase/compat/auth'; // Esta línea es importante
-
-
+import 'firebase/compat/auth';
 @NgModule({
   declarations: [AppComponent],
   imports: [
