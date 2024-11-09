@@ -1,14 +1,91 @@
-/* src/app/gym-inicio/gym-inicio.page.scss */
-.welcome-message {
-    text-align: center;
-    margin-top: 20px;
-    h2 {
-      font-size: 24px;
-      color: #333;
-    }
-    p {
-      font-size: 18px;
-      color: #666;
-    }
-  }
-  
+.container {
+  padding: 20px;
+  background-color: #121212;
+  color: #e0e0e0;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+.filter-section {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+label {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #e0e0e0;
+}
+
+.body-part-select {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background-color: #1f1f1f;
+  color: #e0e0e0;
+}
+
+.body-part-select option {
+  background-color: #1f1f1f;
+  color: #e0e0e0;
+}
+
+/* Lista de ejercicios */
+.exercise-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Tarjetas de ejercicio */
+.exercise-card {
+  background-color: #1f1f1f;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 15px;
+  width: 280px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.exercise-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+  border: 1px solid #3a86ff; 
+}
+
+.exercise-name {
+  font-size: 1.4em;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #3a86ff;
+  margin-bottom: 10px;
+}
+
+.exercise-info {
+  color: #b0b0b0;
+  font-size: 0.95em;
+}
+
+/* Imagen del ejercicio */
+.exercise-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+/* Clase para mostrar la imagen después de cargar */
+.exercise-image.loaded {
+  opacity: 1; 
+}
+
+.no-exercises-message {
+  text-align: center;
+  font-size: 1.1em;
+  color: #888;
+  margin-top: 20px;
+}
