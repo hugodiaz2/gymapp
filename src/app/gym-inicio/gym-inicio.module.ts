@@ -8,6 +8,8 @@ import { GymInicioPageRoutingModule } from './gym-inicio-routing.module';
 
 import { GymInicioPage } from './gym-inicio.page';
 
+
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +17,8 @@ import { GymInicioPage } from './gym-inicio.page';
     IonicModule,
     GymInicioPageRoutingModule
   ],
-  declarations: [GymInicioPage]
+  declarations: [
+    GymInicioPage
+  ],
 })
 export class GymInicioPageModule {}
