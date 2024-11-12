@@ -1,33 +1,46 @@
-<div class="container">
-  <!-- Selector de partes del cuerpo -->
-  <div class="filter-section">
-    <label for="bodyPartSelect">Selecciona una parte del cuerpo:</label>
-    <select id="bodyPartSelect" [(ngModel)]="selectedBodyPart" (change)="onBodyPartChange()" class="body-part-select">
-      <option value="">Todas las partes</option>
-      <option *ngFor="let part of bodyParts" [value]="part">{{ part }}</option>
-    </select>
-  </div>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="logout()">
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Ejercicios</ion-title>
+  </ion-toolbar>
+</ion-header>
 
-  <!-- Lista de ejercicios -->
-  <div *ngIf="exercises.length > 0; else noExercises" class="exercise-list">
-    <div *ngFor="let exercise of exercises" class="exercise-card" (click)="selectExercise(exercise.id)">
-      <!-- Imagen del ejercicio -->
-      <img [src]="exercise.gifUrl" alt="{{ exercise.name }}" class="exercise-image" (load)="onImageLoad($event)" (error)="onImageError($event)">
+<ion-content>
+  <div class="container">
+    <!-- Selector de partes del cuerpo -->
+    <div class="filter-section">
+      <label for="bodyPartSelect">Selecciona una parte del cuerpo:</label>
+      <select id="bodyPartSelect" [(ngModel)]="selectedBodyPart" (change)="onBodyPartChange()" class="body-part-select">
+        <option value="">Todas las partes</option>
+        <option *ngFor="let part of bodyParts" [value]="part">{{ part }}</option>
+      </select>
+    </div>
 
-      <!-- Nombre y detalles del ejercicio -->
-      <h3 class="exercise-name">{{ exercise.name }}</h3>
-      <p class="exercise-info"><strong>Parte del cuerpo:</strong> {{ exercise.bodyPart }}</p>
-      <p class="exercise-info"><strong>Equipo:</strong> {{ exercise.equipment }}</p>
+    <!-- Lista de ejercicios -->
+    <div *ngIf="exercises.length > 0; else noExercises" class="exercise-list">
+      <div *ngFor="let exercise of exercises" class="exercise-card" (click)="selectExercise(exercise.id)">
+        <!-- Imagen del ejercicio -->
+        <img [src]="exercise.gifUrl" alt="{{ exercise.name }}" class="exercise-image" (load)="onImageLoad($event)" (error)="onImageError($event)">
 
-      <!-- Mostrar instrucciones si el ejercicio está seleccionado -->
-      <div *ngIf="selectedExerciseId === exercise.id" class="exercise-instructions">
-        <p><strong>Instrucciones:</strong> {{ exercise.instructions }}</p>
+        <!-- Nombre y detalles del ejercicio -->
+        <h3 class="exercise-name">{{ exercise.name }}</h3>
+        <p class="exercise-info"><strong>Parte del cuerpo:</strong> {{ exercise.bodyPart }}</p>
+        <p class="exercise-info"><strong>Equipo:</strong> {{ exercise.equipment }}</p>
+
+        <!-- Mostrar instrucciones si el ejercicio está seleccionado -->
+        <div *ngIf="selectedExerciseId === exercise.id" class="exercise-instructions">
+          <p><strong>Instrucciones:</strong> {{ exercise.instructions }}</p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Mensaje cuando no hay ejercicios -->
-  <ng-template #noExercises>
-    <p class="no-exercises-message">No se encontraron ejercicios.</p>
-  </ng-template>
-</div>
+    <!-- Mensaje cuando no hay ejercicios -->
+    <ng-template #noExercises>
+      <p class="no-exercises-message">No se encontraron ejercicios.</p>
+    </ng-template>
+  </div>
+</ion-content>

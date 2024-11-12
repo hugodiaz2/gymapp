@@ -9,6 +9,7 @@ import 'firebase/compat/auth';
 })
 export class AuthService {
   constructor(private afAuth: AngularFireAuth, private firestore: AngularFirestore) {}
+
   login(email: string, password: string): Promise<firebase.auth.UserCredential> {
     return this.afAuth.signInWithEmailAndPassword(email, password)
       .catch(error => {
@@ -34,7 +35,7 @@ export class AuthService {
         throw error;
       });
   }
-  
+
   logout(): Promise<void> {
     return this.afAuth.signOut().catch(error => {
       console.error("Error al cerrar sesión:", error);
@@ -42,13 +43,12 @@ export class AuthService {
     });
   }
 
-  loginWithGoogle(): Promise<void> {
-    const provider = new firebase.auth.GoogleAuthProvider();
+  loginWithFacebook(): Promise<void> {
+    const provider = new firebase.auth.FacebookAuthProvider();
     return this.afAuth.signInWithRedirect(provider)
       .catch(error => {
-        console.error("Error en el inicio de sesión con Google:", error);
+        console.error("Error en el inicio de sesión con Facebook:", error);
         throw error;
       });
   }
-  
 }
