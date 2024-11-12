@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ExerciseService } from '../services/exercise.service';
+import { AuthService } from '../services/auth.service'; // Asegúrate de importar tu servicio de autenticación
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-gym-inicio',
@@ -12,7 +14,11 @@ export class GymInicioPage implements OnInit {
   selectedBodyPart: string = '';
   selectedExerciseId: number | null = null; // Para almacenar el ejercicio seleccionado
 
-  constructor(private exerciseService: ExerciseService) {}
+  constructor(
+    private exerciseService: ExerciseService,
+    private authService: AuthService, // Inyecta el servicio de autenticación
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.loadBodyParts(); // Carga las opciones de partes del cuerpo
@@ -44,7 +50,7 @@ export class GymInicioPage implements OnInit {
         );
     }
   }
-  
+
   // Método para actualizar la lista de ejercicios cuando el usuario selecciona una parte del cuerpo
   onBodyPartChange() {
     this.loadExercises();
@@ -63,5 +69,22 @@ export class GymInicioPage implements OnInit {
   // Método para seleccionar un ejercicio y mostrar sus instrucciones
   selectExercise(exerciseId: number) {
     this.selectedExerciseId = this.selectedExerciseId === exerciseId ? null : exerciseId;
+  }
+
+  // Método para volver a la página de inicio
+  goToHome() {
+    this.router.navigate(['/home']);
+  }
+
+  // Método para cerrar sesión
+  logout() {
+    this.authService.logout()
+      .then(() => {
+        console.log("Sesión cerrada");
+        this.router.navigate(['/login']); // Redirige a la página de login
+      })
+      .catch(error => {
+        console.error("Error al cerrar sesión:", error);
+      });
   }
 }

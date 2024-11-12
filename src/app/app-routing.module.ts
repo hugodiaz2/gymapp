@@ -1,19 +1,22 @@
-// src/app/app-routing.module.ts
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
     path: 'register',
-    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+    loadChildren: () => import('./register/register.module').then(m => m.RegisterPageModule)
   },
   {
-    path: 'gym-inicio', // Ruta para la nueva página gym-inicio
-    loadChildren: () => import('./gym-inicio/gym-inicio.module').then( m => m.GymInicioPageModule)
+    path: 'gym-inicio', // Ruta para la página gym-inicio
+    loadChildren: () => import('./gym-inicio/gym-inicio.module').then(m => m.GymInicioPageModule)
+  },
+  {
+    path: 'login', // Agrega esta ruta para la página de login
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
     path: '',

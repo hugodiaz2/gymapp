@@ -24,7 +24,7 @@ import 'firebase/compat/auth';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig), // Asegúrate de que esto esté configurado
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     ReactiveFormsModule,
     FormsModule,

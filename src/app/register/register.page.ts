@@ -36,4 +36,8 @@ export class RegisterPage {
       console.error('Form is invalid');
     }
   }
+
+  goToHome() {
+    this.router.navigate(['/home']);
+  }
 }

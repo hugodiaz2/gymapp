@@ -25,12 +25,11 @@ export class HomePage implements OnInit {
   }
 
   ngOnInit() {
-    // Verificar el resultado del redireccionamiento de Google
+    // Verificar el resultado del redireccionamiento de Facebook
     this.afAuth.getRedirectResult()
       .then((result) => {
         if (result.user) {
-          console.log('Usuario autenticado con Google:', result.user);
-          // Aquí puedes agregar al usuario a Firestore si es la primera vez que inicia sesión
+          console.log('Usuario autenticado con Facebook:', result.user);
           this.router.navigate(['/gym-inicio']);
         }
       })
@@ -59,15 +58,13 @@ export class HomePage implements OnInit {
     this.router.navigate(['/register']);
   }
 
-  loginWithGoogle() {
-    console.log("Iniciando sesión con Google");
-    this.authService.loginWithGoogle()
+  loginWithFacebook() {
+    this.authService.loginWithFacebook()
       .then(() => {
-        console.log("Redirigiendo después del inicio de sesión con Google");
+        console.log("Redirigiendo después del inicio de sesión con Facebook");
       })
-      .catch((error) => {
-        console.error("Error en el inicio de sesión con Google", error);
+      .catch(error => {
+        console.error("Error en el inicio de sesión con Facebook", error);
       });
   }
-  
 }
