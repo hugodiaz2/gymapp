@@ -1,0 +1,13 @@
+{
+  "appId": "com.gymapp.app",
+  "appName": "GymApp",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "plugins": {
+    "GoogleAuth": {
+      "scopes": ["profile", "email"],
+      "serverClientId": "1062454112173-vbt2eaggl35pe8gkr8jinu8fdek9fifu.apps.googleusercontent.com",
+      "forceCodeForRefreshToken": true
+    }
+  }
+}

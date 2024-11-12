@@ -23,10 +23,14 @@
     <ion-button expand="block" color="primary" type="submit">Iniciar Sesión</ion-button>
   </form>
 
-  <!-- Botón para redirigir al registro -->
   <ion-button expand="block" color="light" (click)="goToRegister()" class="register-button">
     Registrarse
   </ion-button>
+
+  <ion-button expand="full" (click)="loginWithGoogle()">
+    Iniciar sesión con Google
+  </ion-button>
+  
 
   <div class="forgot-password">
     <ion-text color="medium">¿Olvidaste tu contraseña?</ion-text>
