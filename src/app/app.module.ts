@@ -16,6 +16,8 @@ import { ExerciseService } from './services/exercise.service';
 // Importaciones de Firebase Authentication
 import firebase from 'firebase/compat/app'; 
 import 'firebase/compat/auth';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getMessaging, provideMessaging } from '@angular/fire/messaging';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import 'firebase/compat/auth';
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    ExerciseService // Cambiado a ExerciseService
+    ExerciseService,
+    provideFirebaseApp(() => initializeApp({"projectId":"gymapp-84e17","appId":"1:1062454112173:web:ef32b2385508c6c44f3b24","storageBucket":"gymapp-84e17.firebasestorage.app","apiKey":"AIzaSyBidqMx8zbQRAo8ynfv6u-ULUs87DHpzgg","authDomain":"gymapp-84e17.firebaseapp.com","messagingSenderId":"1062454112173","measurementId":"G-SJ8HB2P1V3"})),
+    provideMessaging(() => getMessaging()) // Cambiado a ExerciseService
   ],
   bootstrap: [AppComponent],
 })
