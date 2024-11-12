@@ -17,13 +17,14 @@ import { ExerciseService } from './services/exercise.service';
 import firebase from 'firebase/compat/app'; 
 import 'firebase/compat/auth';
 
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebaseConfig), // Asegúrate de que esto esté configurado
     AngularFireAuthModule,
     ReactiveFormsModule,
     FormsModule,

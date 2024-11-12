@@ -1,14 +1,13 @@
-// src/environments/environment.ts
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: "AIzaSyBta9C8X4-yGgfLs8vcwXwf3NHnD_AZeiI",
-    authDomain: "gymapp-5a4eb.firebaseapp.com",
-    projectId: "gymapp-5a4eb",
-    storageBucket: "gymapp-5a4eb.appspot.com",
-    messagingSenderId: "94539341708",
-    appId: "1:94539341708:web:90c29e406f59a085d840a9",
-    measurementId: "G-MQDLZFG8KZ"
+    apiKey: "AIzaSyBidqMx8zbQRAo8ynfv6u-ULUs87DHpzgg",
+  authDomain: "gymapp-84e17.firebaseapp.com",
+  projectId: "gymapp-84e17",
+  storageBucket: "gymapp-84e17.firebasestorage.app",
+  messagingSenderId: "1062454112173",
+  appId: "1:1062454112173:web:ef32b2385508c6c44f3b24",
+  measurementId: "G-SJ8HB2P1V3"
   },
    rapidApiKey: '6434d2d2d0msh056e013419ee164p1d61b0jsn08076e5c74be'
 };
