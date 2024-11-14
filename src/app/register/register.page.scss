@@ -1,0 +1,61 @@
+ion-header {
+    --background: url('../../assets/images/gym-background.jpeg') center / cover no-repeat;
+    --background-blend-mode: multiply;
+    height: 60px;
+    background-color: #1e88e5; /* Fondo azul en la cabecera */
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra para la cabecera */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  .register-form {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #1c1c1c; /* Fondo oscuro para el formulario */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); /* Sombra para dar profundidad */
+  }
+  
+  .gym-item {
+    background-color: rgba(255, 255, 255, 0.08); /* Fondo semitransparente */
+    border-radius: 12px;
+    padding: 12px 20px;
+    margin-bottom: 15px;
+    color: #ffffff;
+    transition: background-color 0.3s ease;
+  }
+  
+  .gym-item:hover {
+    background-color: rgba(255, 255, 255, 0.15); /* Fondo más claro al pasar el cursor */
+  }
+  
+  ion-label {
+    color: #bdbdbd; /* Color gris claro para el texto de los labels */
+    font-size: 14px;
+  }
+  
+  ion-input {
+    color: #ffffff; /* Texto en blanco */
+    font-size: 16px;
+  }
+  
+  ion-button {
+    margin-top: 20px;
+    background: linear-gradient(45deg, #1e88e5, #1565c0); /* Degradado azul */
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(30, 136, 229, 0.5); /* Sombra azul alrededor del botón */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  ion-button:hover {
+    box-shadow: 0 6px 15px rgba(30, 136, 229, 0.7);
+    transform: scale(1.05);
+  }
