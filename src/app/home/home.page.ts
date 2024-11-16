@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { PushNotificationService } from '../services/push-notification.service';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,8 @@ export class HomePage implements OnInit {
     private fb: FormBuilder,
     private authService: AuthService,
     private afAuth: AngularFireAuth,
-    private router: Router
+    private router: Router,
+    private pushNotificationService: PushNotificationService 
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -25,17 +27,18 @@ export class HomePage implements OnInit {
   }
 
   ngOnInit() {
-    // Verificar el resultado del redireccionamiento de Facebook
-    this.afAuth.getRedirectResult()
-      .then((result) => {
-        if (result.user) {
-          console.log('Usuario autenticado con Facebook:', result.user);
-          this.router.navigate(['/gym-inicio']);
-        }
-      })
-      .catch((error) => {
-        console.error('Error al obtener el resultado de redirección:', error);
-      });
+    // Solicita permisos de notificación
+    this.pushNotificationService.requestPermission();
+  
+    // Escucha mensajes push
+    this.pushNotificationService.listen();
+  
+    // Verifica el estado de autenticación
+    this.afAuth.authState.subscribe(user => {
+      if (!user) {
+        this.authService.handleRedirectResult();
+      }
+    });
   }
 
   login() {
@@ -67,4 +70,15 @@ export class HomePage implements OnInit {
         console.error("Error en el inicio de sesión con Facebook", error);
       });
   }
+  
+    // Método para mostrar una notificación básica
+    mostrarNotification() {
+      if ('Notification' in window && Notification.permission === 'granted') {
+        new Notification('¡Hola desde GymApp!', {
+          body: 'Esta es una notificación de prueba.',
+        });
+      } else {
+        console.log('No se puede mostrar la notificación. Permiso no concedido.');
+      }
+    }
 }
