@@ -1,42 +1,41 @@
 {
-    "index": "/index.html",
-    "assetGroups": [
-      {
-        "name": "app",
-        "installMode": "prefetch",
-        "resources": {
-          "files": [
-            "/favicon.ico",
-            "/index.html",
-            "/*.css",
-            "/*.js"
-          ]
-        }
-      },
-      {
-        "name": "assets",
-        "installMode": "lazy",
-        "updateMode": "prefetch",
-        "resources": {
-          "files": [
-            "/assets/**"
-          ]
-        }
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "resources": {
+        "files": [
+          "/favicon.ico",
+          "/index.html",
+          "/*.css",
+          "/*.js"
+        ]
       }
-    ],
-    "dataGroups": [
-      {
-        "name": "api",
-        "urls": [
-          "/api/**"
-        ],
-        "cacheConfig": {
-          "strategy": "performance",
-          "maxSize": 100,
-          "maxAge": "1d",
-          "timeout": "10s"
-        }
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/assets/**"
+        ]
       }
-    ]
-  }
-  
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "api",
+      "urls": [
+        "https://exercisedb.p.rapidapi.com/exercises/**"
+      ],
+      "cacheConfig": {
+        "strategy": "performance",
+        "maxSize": 100,
+        "maxAge": "1d",
+        "timeout": "10s"
+      }
+    }
+  ]
+}
