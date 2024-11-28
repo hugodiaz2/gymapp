@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Datos del Usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Formulario editable -->
+  <div *ngIf="editMode">
+    <ion-item>
+      <ion-label>Edad</ion-label>
+      <ion-input [(ngModel)]="edad" type="number" placeholder="Introduce tu edad"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Altura (cm)</ion-label>
+      <ion-input [(ngModel)]="altura" type="number" placeholder="Introduce tu altura"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Peso (kg)</ion-label>
+      <ion-input [(ngModel)]="peso" type="number" placeholder="Introduce tu peso"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Género</ion-label>
+      <ion-select [(ngModel)]="genero" placeholder="Selecciona género">
+        <ion-select-option value="Hombre">Hombre</ion-select-option>
+        <ion-select-option value="Mujer">Mujer</ion-select-option>
+        <ion-select-option value="Otro">Otro</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-button expand="block" (click)="guardarDatos()">Guardar Datos</ion-button>
+  </div>
+
+  <!-- Datos en modo de texto -->
+  <div *ngIf="!editMode">
+    <p><strong>Edad:</strong> {{ edad }}</p>
+    <p><strong>Altura:</strong> {{ altura }} cm</p>
+    <p><strong>Peso:</strong> {{ peso }} kg</p>
+    <p><strong>Género:</strong> {{ genero }}</p>
+    <ion-button expand="block" color="secondary" (click)="habilitarEdicion()">Editar Datos</ion-button>
+  </div>
+</ion-content>
