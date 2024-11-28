@@ -61,16 +61,6 @@ export class HomePage implements OnInit {
     this.router.navigate(['/register']);
   }
 
-  loginWithFacebook() {
-    this.authService.loginWithFacebook()
-      .then(() => {
-        console.log("Redirigiendo después del inicio de sesión con Facebook");
-      })
-      .catch(error => {
-        console.error("Error en el inicio de sesión con Facebook", error);
-      });
-  }
-  
     // Método para mostrar una notificación básica
     mostrarNotification() {
       if ('Notification' in window && Notification.permission === 'granted') {
