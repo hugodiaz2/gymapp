@@ -1,3 +1,4 @@
+/* General Layout */
 .no-space {
   padding: 0;
   margin: 0;
@@ -7,4 +8,71 @@
   flex-direction: column;
   justify-content: flex-start;
   height: 100%;
+  background-color: #1e1e1e; /* Fondo oscuro */
+  color: #e0e0e0; /* Texto claro para contraste */
+}
+
+/* Styling for Ion List Items */
+ion-list {
+  margin: 16px;
+  border-radius: 8px;
+  background-color: #2a2a2a; /* Fondo gris oscuro */
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5); /* Sombra más sutil */
+  padding: 8px;
+}
+
+/* Ion Items Styling */
+ion-item {
+  --inner-padding-top: 12px;
+  --inner-padding-bottom: 12px;
+  --background: transparent; /* Fondo transparente para una integración mejor */
+  border-bottom: 1px solid #3a3a3a; /* Línea sutil */
+  color: #ffffff; /* Texto blanco */
+}
+
+/* Label Styling */
+ion-label {
+  font-weight: bold;
+  color: #a0a0a0; /* Texto más claro que el fondo */
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+/* Input Styling */
+ion-input {
+  --padding-start: 12px;
+  --padding-end: 12px;
+  font-size: 16px;
+  color: #ffffff; /* Texto blanco */
+  background-color: #333333; /* Fondo oscuro para el input */
+  border-radius: 6px; /* Bordes redondeados */
+  padding: 8px;
+  border: 1px solid #444444; /* Línea delgada */
+}
+
+ion-input::placeholder {
+  color: #777777; /* Placeholder en gris tenue */
+}
+
+/* Select Styling */
+ion-select {
+  --padding-start: 12px;
+  --padding-end: 12px;
+  --placeholder-color: #777777;
+  color: #ffffff; /* Texto blanco */
+  background-color: #333333; /* Fondo oscuro */
+  border-radius: 6px; /* Bordes redondeados */
+  border: 1px solid #444444;
+}
+
+/* Button Styling */
+ion-button {
+  margin: 24px 16px;
+  --border-radius: 8px;
+  --background: #007bff; /* Azul más intenso */
+  --background-hover: #0056b3; /* Hover más oscuro */
+  --color: #ffffff; /* Texto blanco */
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
 }
