@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ExerciseService } from '../services/exercise.service';
-import { AuthService } from '../services/auth.service'; // Asegúrate de importar tu servicio de autenticación
+import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,17 +12,17 @@ export class GymInicioPage implements OnInit {
   exercises: any[] = [];
   bodyParts: string[] = [];
   selectedBodyPart: string = '';
-  selectedExerciseId: number | null = null; // Para almacenar el ejercicio seleccionado
+  selectedExerciseId: number | null = null;
 
   constructor(
     private exerciseService: ExerciseService,
-    private authService: AuthService, // Inyecta el servicio de autenticación
+    private authService: AuthService,
     private router: Router
   ) {}
 
   ngOnInit() {
-    this.loadBodyParts(); // Carga las opciones de partes del cuerpo
-    this.loadExercises(); // Carga inicial de ejercicios sin filtros
+    this.loadBodyParts();
+    this.loadExercises();
   }
 
   // Método para cargar partes del cuerpo
@@ -63,7 +63,7 @@ export class GymInicioPage implements OnInit {
 
   // Método para manejar errores de carga de la imagen y mostrar una imagen alternativa o mensaje
   onImageError(event: Event) {
-    (event.target as HTMLImageElement).src = 'assets/default-image.png'; // Imagen alternativa
+    (event.target as HTMLImageElement).src = 'assets/default-image.png';
   }
 
   // Método para seleccionar un ejercicio y mostrar sus instrucciones
@@ -71,17 +71,12 @@ export class GymInicioPage implements OnInit {
     this.selectedExerciseId = this.selectedExerciseId === exerciseId ? null : exerciseId;
   }
 
-  // Método para volver a la página de inicio
-  goToHome() {
-    this.router.navigate(['/home']);
-  }
-
   // Método para cerrar sesión
   logout() {
     this.authService.logout()
       .then(() => {
         console.log("Sesión cerrada");
-        this.router.navigate(['/login']); // Redirige a la página de login
+        this.router.navigate(['/login']);
       })
       .catch(error => {
         console.error("Error al cerrar sesión:", error);
