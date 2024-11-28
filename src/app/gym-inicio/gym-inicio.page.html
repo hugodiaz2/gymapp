@@ -1,13 +1,23 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-button (click)="logout()">
+      <!-- Botón de cerrar sesión -->
+      <ion-button color="danger">
         <ion-icon name="log-out-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">Ejercicios</ion-title>
+    
+    <ion-title>Ejercicios</ion-title>
+    
+    <ion-buttons slot="end">
+      <!-- Botón para los datos del usuario -->
+      <ion-button routerLink="/progress" color="danger">
+        <ion-icon name="person-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
+
 
 <ion-content>
   <div class="container">

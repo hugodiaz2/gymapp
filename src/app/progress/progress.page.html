@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>Datos del Usuario</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="no-space">
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Edad</ion-label>
+        <ion-input type="number" placeholder="Ingresa tu edad"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="stacked">Altura (cm)</ion-label>
+        <ion-input type="number" placeholder="Ingresa tu altura"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="stacked">Peso (kg)</ion-label>
+        <ion-input type="number" placeholder="Ingresa tu peso"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="stacked">Género</ion-label>
+        <ion-select placeholder="Selecciona género">
+          <ion-select-option value="masculino">Masculino</ion-select-option>
+          <ion-select-option value="femenino">Femenino</ion-select-option>
+          <ion-select-option value="otro">Otro</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  
+    <ion-button expand="block" color="primary">GUARDAR DATOS</ion-button>
+  </ion-content>
+  
