@@ -44,19 +44,6 @@ export class AuthService {
     });
   }
 
-  loginWithFacebook(): Promise<void> {
-    const provider = new firebase.auth.FacebookAuthProvider();
-    return this.afAuth.signInWithPopup(provider)
-      .then(result => {
-        console.log("Inicio de sesión exitoso con Facebook:", result.user);
-      })
-      .catch(error => {
-        console.error("Error en el inicio de sesión con Facebook:", error);
-        throw error;
-      });
-  }
-  
-
   handleRedirectResult(): void {
     this.afAuth.getRedirectResult()
       .then(result => {
