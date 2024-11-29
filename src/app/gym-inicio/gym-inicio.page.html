@@ -1,7 +1,6 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <!-- Botón de cerrar sesión -->
       <ion-button color="danger" (click)="logout()">
         <ion-icon name="log-out-outline"></ion-icon>
       </ion-button>
@@ -10,7 +9,6 @@
     <ion-title>Ejercicios</ion-title>
 
     <ion-buttons slot="end">
-      <!-- Botón para los datos del usuario -->
       <ion-button routerLink="/progress" color="danger">
         <ion-icon name="person-circle-outline"></ion-icon>
       </ion-button>
@@ -20,34 +18,26 @@
 
 <ion-content>
   <div class="container">
-    <!-- Selector de partes del cuerpo -->
     <div class="filter-section">
       <label for="bodyPartSelect">Selecciona una parte del cuerpo:</label>
       <select id="bodyPartSelect" [(ngModel)]="selectedBodyPart" (change)="onBodyPartChange()" class="body-part-select">
-        <option value="">Todas las partes</option>
+        <option value="">TODAS LAS PARTES:</option>
         <option *ngFor="let part of bodyParts" [value]="part">{{ part }}</option>
       </select>
     </div>
 
-    <!-- Lista de ejercicios -->
     <div *ngIf="exercises.length > 0; else noExercises" class="exercise-list">
       <div *ngFor="let exercise of exercises" class="exercise-card" (click)="selectExercise(exercise.id)">
-        <!-- Imagen del ejercicio -->
         <img [src]="exercise.gifUrl" alt="{{ exercise.name }}" class="exercise-image" (load)="onImageLoad($event)" (error)="onImageError($event)">
 
-        <!-- Nombre y detalles del ejercicio -->
         <h3 class="exercise-name">{{ exercise.name }}</h3>
         <p class="exercise-info"><strong>Parte del cuerpo:</strong> {{ exercise.bodyPart }}</p>
-        <p class="exercise-info"><strong>Equipo:</strong> {{ exercise.equipment }}</p>
-
-        <!-- Mostrar instrucciones si el ejercicio está seleccionado -->
+        <p class="exercise-info"><strong>EQUIPO:</strong> {{ exercise.equipment }}</p>
         <div *ngIf="selectedExerciseId === exercise.id" class="exercise-instructions">
           <p><strong>Instrucciones:</strong> {{ exercise.instructions }}</p>
         </div>
       </div>
     </div>
-
-    <!-- Mensaje cuando no hay ejercicios -->
     <ng-template #noExercises>
       <p class="no-exercises-message">No se encontraron ejercicios.</p>
     </ng-template>
