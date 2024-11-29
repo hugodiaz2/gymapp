@@ -27,13 +27,8 @@ export class HomePage implements OnInit {
   }
 
   ngOnInit() {
-    // Solicita permisos de notificación
     this.pushNotificationService.requestPermission();
-  
-    // Escucha mensajes push
     this.pushNotificationService.listen();
-  
-    // Verifica el estado de autenticación
     this.afAuth.authState.subscribe(user => {
       if (!user) {
         this.authService.handleRedirectResult();
@@ -61,7 +56,6 @@ export class HomePage implements OnInit {
     this.router.navigate(['/register']);
   }
 
-    // Método para mostrar una notificación básica
     mostrarNotification() {
       if ('Notification' in window && Notification.permission === 'granted') {
         new Notification('¡Hola desde GymApp!', {

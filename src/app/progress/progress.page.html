@@ -5,37 +5,36 @@
 </ion-header>
 
 <ion-content>
-  <!-- Formulario editable -->
   <div *ngIf="editMode">
     <ion-item>
-      <ion-label>Edad</ion-label>
+      <ion-label>EDAD:</ion-label>
       <ion-input [(ngModel)]="edad" type="number" placeholder="Introduce tu edad"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Altura (cm)</ion-label>
+      <ion-label>ALTURA(CM):</ion-label>
       <ion-input [(ngModel)]="altura" type="number" placeholder="Introduce tu altura"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Peso (kg)</ion-label>
+      <ion-label>PESO(KG):</ion-label>
       <ion-input [(ngModel)]="peso" type="number" placeholder="Introduce tu peso"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Género</ion-label>
+      <ion-label>GENERO:</ion-label>
       <ion-select [(ngModel)]="genero" placeholder="Selecciona género">
-        <ion-select-option value="Hombre">Hombre</ion-select-option>
-        <ion-select-option value="Mujer">Mujer</ion-select-option>
-        <ion-select-option value="Otro">Otro</ion-select-option>
+        <ion-select-option value="Hombre">HOMBRE</ion-select-option>
+        <ion-select-option value="Mujer">MUJER</ion-select-option>
+        <ion-select-option value="Otro">OTRO</ion-select-option>
       </ion-select>
     </ion-item>
-    <ion-button expand="block" (click)="guardarDatos()">Guardar Datos</ion-button>
+    <ion-button expand="block" (click)="guardarDatos()">GUARDAR INFORMACION</ion-button>
   </div>
 
   <!-- Datos en modo de texto -->
   <div *ngIf="!editMode">
-    <p><strong>Edad:</strong> {{ edad }}</p>
-    <p><strong>Altura:</strong> {{ altura }} cm</p>
-    <p><strong>Peso:</strong> {{ peso }} kg</p>
-    <p><strong>Género:</strong> {{ genero }}</p>
+    <p><strong>EDAD:</strong> {{ edad }}</p>
+    <p><strong>ALTURA:</strong> {{ altura }} cm</p>
+    <p><strong>PESO:</strong> {{ peso }} kg</p>
+    <p><strong>GENERO:</strong> {{ genero }}</p>
     <ion-button expand="block" color="secondary" (click)="habilitarEdicion()">Editar Datos</ion-button>
   </div>
 </ion-content>
