@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireMessaging } from '@angular/fire/compat/messaging';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-
 @Injectable({
   providedIn: 'root',
 })
@@ -16,7 +15,6 @@ export class PushNotificationService {
       (token) => {
         if (token) {
           console.log('Token recibido:', token);
-          // Guarda este token en tu backend o úsalo para enviar notificaciones
         } else {
           console.error('No se recibió ningún token.');
         }

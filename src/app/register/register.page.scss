@@ -2,9 +2,9 @@ ion-header {
     --background: url('../../assets/images/gym-background.jpeg') center / cover no-repeat;
     --background-blend-mode: multiply;
     height: 60px;
-    background-color: #1e88e5; /* Fondo azul en la cabecera */
+    background-color: #1e88e5;
     color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra para la cabecera */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,13 +16,13 @@ ion-header {
     max-width: 400px;
     margin: 40px auto;
     padding: 20px;
-    background-color: #1c1c1c; /* Fondo oscuro para el formulario */
+    background-color: #1c1c1c; 
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); /* Sombra para dar profundidad */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); 
   }
   
   .gym-item {
-    background-color: rgba(255, 255, 255, 0.08); /* Fondo semitransparente */
+    background-color: rgba(255, 255, 255, 0.08); 
     border-radius: 12px;
     padding: 12px 20px;
     margin-bottom: 15px;
