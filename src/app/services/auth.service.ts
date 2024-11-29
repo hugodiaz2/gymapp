@@ -4,13 +4,11 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import firebase from 'firebase/compat/app';
 import { Router } from '@angular/router';
 import 'firebase/compat/auth';
-
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   constructor(private afAuth: AngularFireAuth, private firestore: AngularFirestore, private router: Router) {}
-
   login(email: string, password: string): Promise<firebase.auth.UserCredential> {
     return this.afAuth.signInWithEmailAndPassword(email, password)
       .catch(error => {
@@ -49,7 +47,6 @@ export class AuthService {
       .then(result => {
         if (result.user) {
           console.log("Inicio de sesión exitoso:", result.user);
-          // Aquí redirigimos al usuario a la página deseada
           this.router.navigate(['/gym-inicio']);
         }
       })
